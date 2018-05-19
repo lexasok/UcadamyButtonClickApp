@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private Button button;
     private TextView textView;
     private int numTimesClicked = 0;
-    private String result = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numTimesClicked++;
-                result += "The button has clicked: " + numTimesClicked + " times.\n";
-                textView.setText(result);
+                String result = "The button has clicked: " + numTimesClicked + " times.\n";
+                textView.append(result);
             }
         });
 
