@@ -1,7 +1,7 @@
 package net.ozero.buttonclickapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         //scrolling
         textView.setMovementMethod(new ScrollingMovementMethod());
 
-
+        //button initializing
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textView.append(editText.getText().toString() + "\n");
             }
         });
 
