@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setMovementMethod(new ScrollingMovementMethod());
 
         //button initializing
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
