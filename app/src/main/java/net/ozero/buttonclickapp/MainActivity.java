@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TEXT_VIEW_KEY = "textView key";
     private EditText editText;
     private TextView textView;
 
@@ -26,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
         //scrolling
         textView.setMovementMethod(new ScrollingMovementMethod());
 
-        //button initializing
+        //Getting instance
 
+
+        //button initializing
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,5 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        savedInstanceState.putString(TEXT_VIEW_KEY, textView.getText().toString());
     }
+
 }
