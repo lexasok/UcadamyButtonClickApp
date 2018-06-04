@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private EditText editText;
-    private Button button;
     private TextView textView;
 
 
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editText = findViewById(R.id.editText);
-        button = findViewById(R.id.button);
+        Button button = findViewById(R.id.button);
         textView = findViewById(R.id.textView);
 
         //scrolling
