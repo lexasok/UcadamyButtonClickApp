@@ -2,6 +2,7 @@ package net.ozero.buttonclickapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,11 +24,18 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         textView = findViewById(R.id.textView);
 
+        //scrolling
+        textView.setMovementMethod(new ScrollingMovementMethod());
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numTimesClicked++;
-                String result = "The button has clicked: " + numTimesClicked + " times.\n";
+                String result = "\nThe button has clicked: " + numTimesClicked + " time";
+                if (numTimesClicked != 1) {
+                    result += "s";
+                }
                 textView.append(result);
             }
         });
