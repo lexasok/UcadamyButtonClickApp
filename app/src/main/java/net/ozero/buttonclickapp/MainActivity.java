@@ -45,11 +45,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.d(TAG, "onRestoreInstanceState: in");
+        super.onRestoreInstanceState(savedInstanceState);
+        textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
+        Log.d(TAG, "onRestoreInstanceState: out");
+    }
+
+    @Override
     protected void onStart() {
         Log.d(TAG, "onStart: in");
         super.onStart();
         Log.d(TAG, "onStart: out");
     }
+
+    @Override
+    protected void onResume() {
+        Log.d(TAG, "onResume: in");
+        super.onResume();
+        Log.d(TAG, "onResume: out");
+    }
+
 
     @Override
     protected void onPause() {
@@ -58,13 +74,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onPause: out");
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        Log.d(TAG, "onRestoreInstanceState: in");
-        super.onRestoreInstanceState(savedInstanceState);
-        textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
-        Log.d(TAG, "onRestoreInstanceState: out");
-    }
 
     @Override
     protected void onRestart() {
