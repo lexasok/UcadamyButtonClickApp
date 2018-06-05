@@ -74,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onPause: out");
     }
 
+    @Override
+    protected void onStop() {
+        Log.d(TAG, "onStop: in");
+        super.onStop();
+        Log.d(TAG, "onStop: out");
+    }
 
     @Override
     protected void onRestart() {
@@ -90,4 +96,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onSaveInstanceState: out");
     }
 
+    @Override
+    protected void onDestroy() {
+        Log.d(TAG, "onDestroy: in");
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: out");
+    }
 }
