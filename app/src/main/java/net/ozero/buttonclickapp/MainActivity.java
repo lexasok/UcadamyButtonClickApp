@@ -38,8 +38,20 @@ public class MainActivity extends AppCompatActivity {
                 editText.setText("");
             }
         });
-
-//        savedInstanceState.putString(TEXT_VIEW_KEY, textView.getText().toString());
     }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState.get(TEXT_VIEW_KEY) != null) {
+          textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
+        }
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(TEXT_VIEW_KEY, textView.getText().toString());
+    }
 }
