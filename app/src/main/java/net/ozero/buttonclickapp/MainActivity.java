@@ -52,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        Log.d(TAG, "onPause: in");
+        super.onPause();
+        Log.d(TAG, "onPause: out");
+    }
+
+    @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         Log.d(TAG, "onRestoreInstanceState: in");
         super.onRestoreInstanceState(savedInstanceState);
