@@ -45,11 +45,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -57,8 +66,4 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(TEXT_VIEW_KEY, textView.getText().toString());
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
 }
