@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TEXT_VIEW_KEY = "textView key";
+    private static final String TEXT_CONTENTS = "TextContents";
     private static final String TAG = "MainActivity";
     private EditText editText;
     private TextView textView;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         Log.d(TAG, "onRestoreInstanceState: in");
         super.onRestoreInstanceState(savedInstanceState);
-        textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
+        textView.setText(savedInstanceState.getString(TEXT_CONTENTS));
         Log.d(TAG, "onRestoreInstanceState: out");
     }
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         Log.d(TAG, "onSaveInstanceState: in");
         super.onSaveInstanceState(outState);
-        outState.putString(TEXT_VIEW_KEY, textView.getText().toString());
+        outState.putString(TEXT_CONTENTS, textView.getText().toString());
         Log.d(TAG, "onSaveInstanceState: out");
     }
 
