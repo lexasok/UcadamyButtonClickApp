@@ -43,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if (savedInstanceState.get(TEXT_VIEW_KEY) != null) {
-          textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
-        }
+        textView.setText(savedInstanceState.getString(TEXT_VIEW_KEY));
     }
 
 
